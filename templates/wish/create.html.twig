@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Nouvelle idée | {{ parent() }} 
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h2>Nouvelle idée</h2>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'D:/wamp64/www/ENI/Bucket-List/src/Controller/WishController.php'|file_link(0) }}">src/Controller/WishController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'D:/wamp64/www/ENI/Bucket-List/templates/wish/index.html.twig'|file_link(0) }}">templates/wish/index.html.twig</a></code></li>
+    </ul> #}
+
+    <section>
+    {{ form_start(wishForm) }}
+
+    {{ form_widget(wishForm) }}
+
+    <p><button>Créer</button></p>
+    {{ form_end(wishForm) }}
+    </section>
+
+
+
+</div>
+{% endblock %}

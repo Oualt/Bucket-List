@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ wishDetail.title }} Details | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h4>🔎 Details : </h4>
+    
+    <h2>📝 {{ wishDetail.title }} [{{wishDetail.category.name}}]</h2>
+
+    {# This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'D:/wamp64/www/ENI/Bucket-List/src/Controller/WishController.php'|file_link(0) }}">src/Controller/WishController.php</a></code></li>
+        
+    </ul> #}
+    <section>
+    <p>📄 {{ wishDetail.description }}</p>
+    <p>🖊 {{ wishDetail.author }}</p>
+    <p>🕘 {{ wishDetail.dateCreated|date('d / m / Y | H:i:s') }}</p>    
+    </section>
+
+    <form action="{{ path('wish_remove', {'id': wishDetail.id}) }}" method="post">
+    <button type="submit">🗑 Supprimer 🗑</button>
+</form>
+</div>
+{% endblock %}
